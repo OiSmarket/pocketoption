@@ -32,15 +32,16 @@
         .content {
             max-width: 600px;
             opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 1s ease forwards;
-            animation-delay: 0.5s;
+            transform: scale(0.8);
+            animation: scaleUp 1s ease forwards;
             margin-top: 20px;
         }
         .content h1 {
             font-size: 2.5em;
             line-height: 1.2;
             color: #ffffff;
+            animation: fadeIn 1.5s ease forwards;
+            animation-delay: 0.3s;
         }
         .content h1 .highlight {
             color: #3ea6ff;
@@ -51,9 +52,14 @@
             margin-top: 20px;
             line-height: 1.5;
             opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 1s ease forwards;
+            animation: fadeIn 1s ease forwards;
             animation-delay: 0.7s;
+        }
+        .timer {
+            font-size: 1.5em;
+            margin-top: 10px;
+            color: #ff5c5c;
+            font-weight: bold;
         }
         .btn {
             display: inline-block;
@@ -67,24 +73,31 @@
             border-radius: 30px;
             text-decoration: none;
             transition: background-color 0.3s ease;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 1s ease forwards;
-            animation-delay: 0.9s;
         }
         .btn:hover {
             background-color: #338ddf;
         }
 
         /* Анимация */
-        @keyframes fadeInUp {
+        @keyframes fadeIn {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(20px);
             }
             to {
                 opacity: 1;
                 transform: translateY(0);
+            }
+        }
+
+        @keyframes scaleUp {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
             }
         }
 
@@ -129,9 +142,28 @@
         <!-- Основное содержимое -->
         <div class="content">
             <h1>Получите <span class="highlight">100% бонус</span> при депозите от $100</h1>
+            <div class="timer" id="timer">01:00</div>
             <p>Увеличьте свои шансы на успех с дополнительным бонусом на ваш депозит!</p>
             <a href="https://pocket1.click/cabinet/demo-high-low/?try-demo=1&redirectUrl=cabinet/deposit-step-1&utm_campaign=804102&utm_source=affiliate&utm_medium=sr&a=kJ2YOtRSnnjUfE&ac=po100x100&code=NSQ214" class="btn">Удвоить депозит</a>
         </div>
     </div>
+
+    <script>
+        // Таймер отсчета
+        let time = 60;
+        const timerElement = document.getElementById('timer');
+
+        const countdown = setInterval(() => {
+            const minutes = Math.floor(time / 60);
+            const seconds = time % 60;
+            timerElement.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            time--;
+
+            if (time < 0) {
+                clearInterval(countdown);
+                timerElement.textContent = "Время истекло!";
+            }
+        }, 1000);
+    </script>
 </body>
 </html>
