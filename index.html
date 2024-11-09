@@ -31,17 +31,15 @@
         }
         .content {
             max-width: 600px;
-            opacity: 0;
-            transform: scale(0.8);
-            animation: scaleUp 1s ease forwards;
             margin-top: 20px;
         }
         .content h1 {
             font-size: 2.5em;
             line-height: 1.2;
             color: #ffffff;
-            animation: fadeIn 1.5s ease forwards;
-            animation-delay: 0.3s;
+            opacity: 0;
+            transform: translateX(100px) rotate(0deg);
+            animation: slideIn 1.2s ease-out forwards;
         }
         .content h1 .highlight {
             color: #3ea6ff;
@@ -52,8 +50,9 @@
             margin-top: 20px;
             line-height: 1.5;
             opacity: 0;
-            animation: fadeIn 1s ease forwards;
-            animation-delay: 0.7s;
+            transform: translateX(100px);
+            animation: slideIn 1.2s ease-out forwards;
+            animation-delay: 0.3s;
         }
         .timer {
             font-size: 1.5em;
@@ -79,25 +78,18 @@
         }
 
         /* Анимация */
-        @keyframes fadeIn {
-            from {
+        @keyframes slideIn {
+            0% {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateX(100px) rotate(0deg);
             }
-            to {
+            70% {
                 opacity: 1;
-                transform: translateY(0);
+                transform: translateX(-10px) rotate(3deg);
             }
-        }
-
-        @keyframes scaleUp {
-            from {
-                opacity: 0;
-                transform: scale(0.8);
-            }
-            to {
+            100% {
                 opacity: 1;
-                transform: scale(1);
+                transform: translateX(0) rotate(0deg);
             }
         }
 
