@@ -37,22 +37,45 @@
             font-size: 2.5em;
             line-height: 1.2;
             color: #ffffff;
+        }
+        /* Fade In Letters animation */
+        .content h1 span {
             opacity: 0;
-            transform: translateX(100px) rotate(0deg);
-            animation: slideIn 1.2s ease-out forwards;
+            display: inline-block;
+            animation: fadeInLetter 0.5s ease forwards;
         }
-        .content h1 .highlight {
-            color: #3ea6ff;
+
+        @keyframes fadeInLetter {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
+
+        /* Задержка анимации для каждой буквы */
+        .content h1 span:nth-child(1) { animation-delay: 0s; }
+        .content h1 span:nth-child(2) { animation-delay: 0.05s; }
+        .content h1 span:nth-child(3) { animation-delay: 0.1s; }
+        .content h1 span:nth-child(4) { animation-delay: 0.15s; }
+        .content h1 span:nth-child(5) { animation-delay: 0.2s; }
+        .content h1 span:nth-child(6) { animation-delay: 0.25s; }
+        .content h1 span:nth-child(7) { animation-delay: 0.3s; }
+        .content h1 span:nth-child(8) { animation-delay: 0.35s; }
+        .content h1 span:nth-child(9) { animation-delay: 0.4s; }
+        .content h1 span:nth-child(10) { animation-delay: 0.45s; }
+        .content h1 span:nth-child(11) { animation-delay: 0.5s; }
+        .content h1 span:nth-child(12) { animation-delay: 0.55s; }
+        .content h1 span:nth-child(13) { animation-delay: 0.6s; }
+
         .content p {
             color: #c2c9e6;
             font-size: 1.2em;
             margin-top: 20px;
             line-height: 1.5;
-            opacity: 0;
-            transform: translateX(100px);
-            animation: slideIn 1.2s ease-out forwards;
-            animation-delay: 0.3s;
         }
         .timer {
             font-size: 1.5em;
@@ -76,19 +99,6 @@
         .btn:hover {
             background-color: #338ddf;
         }
-
-        /* Анимация */
-        @keyframes zoomRotate {
-    0% {
-        opacity: 0;
-        transform: scale(0.5) rotate(-10deg);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1) rotate(0deg);
-    }
-}
-
 
         /* Мобильная версия */
         @media (max-width: 768px) {
@@ -128,9 +138,13 @@
             </a>
         </div>
         
-        <!-- Основное содержимое -->
+        <!-- Основное содержимое с анимацией Fade In Letters -->
         <div class="content">
-            <h1>Получите <span class="highlight">100% бонус</span> при депозите от $100</h1>
+            <h1>
+                <span>П</span><span>о</span><span>л</span><span>у</span><span>ч</span><span>и</span><span>т</span><span>е </span>
+                <span>1</span><span>0</span><span>0</span><span>% </span><span>б</span><span>о</span><span>н</span><span>у</span><span>с</span> 
+                <span>п</span><span>р</span><span>и </span><span>д</span><span>е</span><span>п</span><span>о</span><span>з</span><span>и</span><span>т</span><span>е </span><span>о</span><span>т </span><span>$</span><span>1</span><span>0</span><span>0</span>
+            </h1>
             <div class="timer" id="timer">01:00</div>
             <p>Увеличьте свои шансы на успех с дополнительным бонусом на ваш депозит!</p>
             <a href="https://pocket1.click/cabinet/demo-high-low/?try-demo=1&redirectUrl=cabinet/deposit-step-1&utm_campaign=804102&utm_source=affiliate&utm_medium=sr&a=kJ2YOtRSnnjUfE&ac=po100x100&code=NSQ214" class="btn">Удвоить депозит</a>
