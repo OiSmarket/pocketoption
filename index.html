@@ -4,11 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PocketOption</title>
+
+    <!-- Meta Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '554111363876296');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=554111363876296&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+
     <!-- Подключаем Animate.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <!-- Подключаем jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
     <style>
         body {
             margin: 0;
@@ -46,8 +66,8 @@
             line-height: 1.2;
             color: #ffffff;
             opacity: 0;
-            transform: translateX(100px) rotate(0deg);
-            animation: slideIn 1.2s ease-out forwards;
+            transform: scale(0.8);
+            animation: scaleUp 1.2s ease-out forwards;
         }
         .content h1 .highlight {
             color: #3ea6ff;
@@ -58,8 +78,8 @@
             margin-top: 20px;
             line-height: 1.5;
             opacity: 0;
-            transform: translateX(100px);
-            animation: slideIn 1.2s ease-out forwards;
+            transform: scale(0.8);
+            animation: scaleUp 1.2s ease-out forwards;
             animation-delay: 0.3s;
         }
         .timer {
@@ -82,7 +102,7 @@
             overflow: hidden;
             position: relative;
             transition: background-color 0.3s ease;
-            opacity: 0; /* скрываем кнопку до появления */
+            opacity: 0;
         }
         .btn::before {
             content: "";
@@ -93,7 +113,7 @@
             height: 200%;
             background: rgba(255, 255, 255, 0.3);
             transform: skewX(-45deg);
-            opacity: 0; /* скрываем блик до появления */
+            opacity: 0;
         }
 
         /* Анимации */
@@ -101,18 +121,14 @@
             0% { opacity: 0; transform: translateY(-20px); }
             100% { opacity: 1; transform: translateY(0); }
         }
-        @keyframes slideIn {
+        @keyframes scaleUp {
             0% {
                 opacity: 0;
-                transform: translateX(100px) rotate(0deg);
-            }
-            70% {
-                opacity: 1;
-                transform: translateX(-10px) rotate(3deg);
+                transform: scale(0.8);
             }
             100% {
                 opacity: 1;
-                transform: translateX(0) rotate(0deg);
+                transform: scale(1);
             }
         }
         @keyframes shine {
