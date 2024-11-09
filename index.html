@@ -1,1 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PocketOption</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #0a0e27, #1b2b56);
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+        .container {
+            text-align: left;
+            max-width: 1200px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            flex-direction: row;
+        }
+        .content {
+            max-width: 500px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease forwards;
+            animation-delay: 0.5s;
+        }
+        .content h1 {
+            font-size: 3em;
+            line-height: 1.2;
+            color: #ffffff;
+        }
+        .content h1 .highlight {
+            color: #3ea6ff;
+        }
+        .content p {
+            color: #c2c9e6;
+            font-size: 1.2em;
+            margin-top: 20px;
+            line-height: 1.5;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease forwards;
+            animation-delay: 0.7s;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 30px;
+            background-color: #3ea6ff;
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 1em;
+            text-align: center;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease forwards;
+            animation-delay: 0.9s;
+        }
+        .btn:hover {
+            background-color: #338ddf;
+        }
+        .image-container {
+            position: relative;
+            max-width: 400px;
+            opacity: 0;
+            transform: scale(0.9);
+            animation: fadeInScale 1s ease forwards;
+            animation-delay: 1s;
+        }
+        .image-container img {
+            width: 100%;
+            border-radius: 20px;
+        }
+
+        /* Анимация */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Мобильная версия */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+            .content h1 {
+                font-size: 2em;
+                line-height: 1.2;
+            }
+            .content p {
+                font-size: 1em;
+                margin-top: 15px;
+            }
+            .btn {
+                padding: 12px 25px;
+                font-size: 0.9em;
+            }
+            .image-container {
+                max-width: 300px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .content h1 {
+                font-size: 1.8em;
+            }
+            .content p {
+                font-size: 0.9em;
+            }
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.85em;
+            }
+            .image-container {
+                max-width: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <h1>Trade like <span class="highlight">an expert</span> with Pocket Option</h1>
+            <p>Learn from the best traders in the Social Trading mode</p>
+            <a href="#" class="btn">Sign Up</a>
+        </div>
+        <div class="image-container">
+            <!-- Ссылка на изображение с Freepik -->
+            <img src="https://img.freepik.com/free-vector/finance-market-chart-background-earn-digital-profit_1017-44828.jpg?t=st=1731170803~exp=1731174403~hmac=09e7c1a29ce9ddc31b19df75cc6cfb219c67315b7d552830f14f1afc7318809a&w=900" alt="Finance Market Chart Background">
+        </div>
+    </div>
+</body>
+</html>
 
