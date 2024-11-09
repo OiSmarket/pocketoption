@@ -82,6 +82,7 @@
             overflow: hidden;
             position: relative;
             transition: background-color 0.3s ease;
+            opacity: 0; /* скрываем кнопку до появления */
         }
         .btn::before {
             content: "";
@@ -92,7 +93,7 @@
             height: 200%;
             background: rgba(255, 255, 255, 0.3);
             transform: skewX(-45deg);
-            opacity: 0;
+            opacity: 0; /* скрываем блик до появления */
         }
 
         /* Анимации */
@@ -112,6 +113,20 @@
             100% {
                 opacity: 1;
                 transform: translateX(0) rotate(0deg);
+            }
+        }
+        @keyframes shine {
+            0% {
+                left: -100%;
+                opacity: 0;
+            }
+            50% {
+                left: 100%;
+                opacity: 0.3;
+            }
+            100% {
+                left: 100%;
+                opacity: 0;
             }
         }
 
@@ -179,14 +194,11 @@
             }
         }, 1000);
 
-        // Блик на кнопке при загрузке страницы
+        // Появление кнопки и блик при загрузке страницы
         $(document).ready(function() {
-            $('.btn').addClass('animate__animated animate__slideInRight');
+            $('.btn').css('opacity', '1').addClass('animate__animated animate__fadeIn');
             setTimeout(function() {
-                $('.btn').removeClass('animate__animated animate__slideInRight');
-                $('.btn::before').css('opacity', '1').animate({ left: '100%' }, 1000, function() {
-                    $(this).css({ left: '-100%' });
-                });
+                $('.btn::before').css('opacity', '1').css('animation', 'shine 1s ease-in-out forwards');
             }, 1000);
         });
     </script>
