@@ -25,6 +25,7 @@
             display: flex;
             align-items: center;
             gap: 50px;
+            flex-direction: row;
         }
         .content {
             max-width: 500px;
@@ -104,6 +105,46 @@
             to {
                 opacity: 1;
                 transform: scale(1);
+            }
+        }
+
+        /* Мобильная версия */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+            .content h1 {
+                font-size: 2em;
+                line-height: 1.2;
+            }
+            .content p {
+                font-size: 1em;
+                margin-top: 15px;
+            }
+            .btn {
+                padding: 12px 25px;
+                font-size: 0.9em;
+            }
+            .image-container {
+                max-width: 300px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .content h1 {
+                font-size: 1.8em;
+            }
+            .content p {
+                font-size: 0.9em;
+            }
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.85em;
+            }
+            .image-container {
+                max-width: 250px;
             }
         }
     </style>
