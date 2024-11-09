@@ -79,9 +79,6 @@
             position: relative;
             transition: background-color 0.3s ease;
         }
-        .btn:hover {
-            background-color: #338ddf;
-        }
         .btn::before {
             content: "";
             position: absolute;
@@ -91,10 +88,7 @@
             height: 200%;
             background: rgba(255, 255, 255, 0.3);
             transform: skewX(-45deg);
-            transition: left 0.5s ease;
-        }
-        .btn:hover::before {
-            left: 100%;
+            animation: shine 2s ease-in-out infinite;
         }
 
         /* Анимации */
@@ -114,6 +108,17 @@
             100% {
                 opacity: 1;
                 transform: translateX(0) rotate(0deg);
+            }
+        }
+        @keyframes shine {
+            0% {
+                left: -100%;
+            }
+            50% {
+                left: 100%;
+            }
+            100% {
+                left: 100%;
             }
         }
 
