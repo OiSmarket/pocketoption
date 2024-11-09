@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PocketOption</title>
+    <!-- Подключаем Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- Подключаем jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -88,7 +92,7 @@
             height: 200%;
             background: rgba(255, 255, 255, 0.3);
             transform: skewX(-45deg);
-            animation: shine 2s ease-in-out infinite;
+            opacity: 0;
         }
 
         /* Анимации */
@@ -108,17 +112,6 @@
             100% {
                 opacity: 1;
                 transform: translateX(0) rotate(0deg);
-            }
-        }
-        @keyframes shine {
-            0% {
-                left: -100%;
-            }
-            50% {
-                left: 100%;
-            }
-            100% {
-                left: 100%;
             }
         }
 
@@ -185,6 +178,17 @@
                 timerElement.textContent = "Время истекло!";
             }
         }, 1000);
+
+        // Блик на кнопке при загрузке страницы
+        $(document).ready(function() {
+            $('.btn').addClass('animate__animated animate__slideInRight');
+            setTimeout(function() {
+                $('.btn').removeClass('animate__animated animate__slideInRight');
+                $('.btn::before').css('opacity', '1').animate({ left: '100%' }, 1000, function() {
+                    $(this).css({ left: '-100%' });
+                });
+            }, 1000);
+        });
     </script>
 </body>
 </html>
