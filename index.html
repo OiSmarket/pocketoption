@@ -13,19 +13,27 @@
             background: linear-gradient(135deg, #0a0e27, #1b2b56);
             color: #ffffff;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            min-height: 100vh;
-            overflow: hidden;
+        }
+        .banner {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        .banner img {
+            width: 100%;
+            display: block;
         }
         .container {
-            text-align: left;
             max-width: 1200px;
             padding: 20px;
             display: flex;
             align-items: center;
             gap: 50px;
             flex-direction: row;
+            text-align: left;
+            margin-top: 20px;
         }
         .content {
             max-width: 500px;
@@ -72,18 +80,6 @@
         .btn:hover {
             background-color: #338ddf;
         }
-        .image-container {
-            position: relative;
-            max-width: 600px;
-            opacity: 0;
-            transform: scale(0.9);
-            animation: fadeInScale 1s ease forwards;
-            animation-delay: 1s;
-        }
-        .image-container img {
-            width: 100%;
-            border-radius: 20px;
-        }
 
         /* Анимация */
         @keyframes fadeInUp {
@@ -94,17 +90,6 @@
             to {
                 opacity: 1;
                 transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInScale {
-            from {
-                opacity: 0;
-                transform: scale(0.9);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
             }
         }
 
@@ -127,9 +112,6 @@
                 padding: 12px 25px;
                 font-size: 0.9em;
             }
-            .image-container {
-                max-width: 300px;
-            }
         }
         
         @media (max-width: 480px) {
@@ -143,24 +125,23 @@
                 padding: 10px 20px;
                 font-size: 0.85em;
             }
-            .image-container {
-                max-width: 250px;
-            }
         }
     </style>
 </head>
 <body>
+    <!-- Баннер на всю ширину -->
+    <div class="banner">
+        <a href="https://pocket1.click/register?utm_source=affiliate&a=kJ2YOtRSnnjUfE&ac=po100x100&code=NSQ214">
+            <img src="https://affiliate.pocketoption.com/uploads/banners/013-QT-RU-600x314-04.jpg" alt="Pocket Option Banner">
+        </a>
+    </div>
+
+    <!-- Основное содержимое -->
     <div class="container">
         <div class="content">
             <h1>Получите <span class="highlight">100% бонус</span> при депозите от $100</h1>
             <p>Увеличьте свои шансы на успех с дополнительным бонусом на ваш депозит!</p>
             <a href="#" class="btn">Удвоить депозит</a>
-        </div>
-        <div class="image-container">
-            <!-- Ссылка на баннер -->
-            <a href="https://pocket1.click/register?utm_source=affiliate&a=kJ2YOtRSnnjUfE&ac=po100x100&code=NSQ214">
-                <img src="https://affiliate.pocketoption.com/uploads/banners/013-QT-RU-600x314-04.jpg" alt="Pocket Option Banner">
-            </a>
         </div>
     </div>
 </body>
